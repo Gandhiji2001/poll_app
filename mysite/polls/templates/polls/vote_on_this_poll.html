@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vote on this pole</title>
+	<style>
+	h1{
+		text-align: center;
+		border: solid black;
+ 	 	line-height: 4;
+  		background: wheat;
+  		margin-top: 0px;
+  		width: 1063px;
+  		height: 150px;
+	}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/vote_on_this_poll.html */
+
+body > p:nth-child(3) {
+  font-size: 40px;
+  font-style: ;
+  font-family: inherit;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-left: 48px;
+}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/vote_on_this_poll.html */
+
+#option1 {
+  margin-left: 55px;
+  margin-top: 0px;
+  margin-bottom: 2px;
+  padding-top: 590px;
+  padding-bottom: 0px;
+}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/vote_on_this_poll.html */
+
+body > p:nth-child(3) {
+  margin-bottom: 22px;
+}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/vote_on_this_poll.html */
+
+#option2 {
+  margin-left: 55px;
+}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/vote_on_this_poll.html */
+
+body > button:nth-child(12) {
+  margin-left: 52px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 2px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+
+	</style>
+</head>
+<body>
+	<h1>{{ question.question_text }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'polls:vote' question.id %}" method="post">
+{% csrf_token %}
+{% for choice in question.choice_set.all %}
+    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+{% endfor %}
+<input type="submit" value="Vote">
+</form>
+
+
+</body>
+</html>

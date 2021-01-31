@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Poll</title>
+    <style>
+	h1{
+		text-align: center;
+		border: solid black;
+ 	 	line-height: 4;
+  		background: wheat;
+  		margin-top: 0px;
+  		width: 1063px;
+  		height: 150px;
+	}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/createpoll.html */
+
+body > div:nth-child(3) {
+  width: 550px;
+  height: 400px;
+  margin-left: 0px;
+}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/createpoll.html */
+
+body > div:nth-child(3) > p:nth-child(1) {
+  font-size: 26px;
+  letter-spacing: 0em;
+  font-weight: 700;
+  font-style: normal;
+  margin-top: 32px;
+  margin-left: 19px;
+  padding-top: 19px;
+}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/createpoll.html */
+
+body > div:nth-child(3) > input:nth-child(2) {
+  width: 472px;
+  height: 25px;
+  margin-left: 21px;
+  padding-top: 0px;
+  margin-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
+  border: solid gray;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/createpoll.html */
+
+body > div:nth-child(3) > p:nth-child(1) {
+  margin-bottom: 16px;
+  padding-right: 0px;
+  width: 526px;
+}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/createpoll.html */
+
+body > div:nth-child(3) > p:nth-child(3) {
+  margin-left: 21px;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.019em;
+  padding-top: 21px;
+}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/createpoll.html */
+
+body > div:nth-child(3) > input:nth-child(4) {
+  width: 200px;
+  padding-left: 1px;
+  margin-left: 20px;
+  border: solid grey;
+  border-left-width: 1px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 274px;
+  margin-bottom: 14px;
+}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/createpoll.html */
+
+body > div:nth-child(3) > input:nth-child(6) {
+  border: solid grey;
+  border-left-width: 1px;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-bottom-width: 1px;
+  width: 473px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  margin-left: 20px;
+}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/createpoll.html */
+
+body > div:nth-child(3) > button:nth-child(7) {
+  margin-left: 19px;
+  margin-top: 20px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/createpoll.html */
+
+body > div:nth-child(3) > p:nth-child(8) {
+  margin-left: 20px;
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: 0.048em;
+  padding-top: 9px;
+}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/createpoll.html */
+
+body > div:nth-child(3) {
+  height: 441px;
+}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/createpoll.html */
+
+body > div:nth-child(3) > input:nth-child(9) {
+  border: solid gray;
+  border-top-width: 1px;
+  border-right-width: 1px;
+  border-left-width: 1px;
+  border-bottom-width: 1px;
+  margin-left: 20px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  width: 473px;
+}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/createpoll.html */
+
+body > div:nth-child(3) > button:nth-child(10) {
+  margin-left: 0px;
+  margin-top: 57px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-left: 51px;
+  padding-right: 51px;
+}
+
+
+
+
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+<H1> FlyWeight Polls </H1>
+<hr>
+<div style="background-image: url('grey.png');">
+    <p>Question</p>
+    <form id="poll_form" method="POST">
+        <input name="question_text" placeholder="Type your poll question here" type="text">
+        <p>Answer Options</p>
+        <div id="OptionAdd">
+            <input name="option1" placeholder="Option 1" type="text"> <br>
+            <input name="option2" placeholder="Option 2" type="text">
+            <div id="newRow"></div>
+        </div>
+
+
+        <button id="addRow" type="button">Add Option</button>
+
+
+        <p>Comma seperated tags</p>
+        <input name="tags" placeholder="Tag1, Tag2, Tag3" type="text">
+        <!--<input type="Submit" value="Create Poll"> -->
+        <input id="submit" type="submit" value="Submit">
+
+    </form>
+    <script type="text/javascript">
+    $(document).ready(function() {
+    $("#addRow").click(function () {
+    	n = 0;
+        var html = '';
+        html += '<br>';
+        html += '<input type="text" name="option1" placeholder="New Option">';
+
+
+        $('#newRow').append(html);
+    });
+
+    });
+
+
+
+    </script>
+    <script>
+$(document).ready(function(){
+$("#poll_form").submit(function(e){
+var data = $("#poll_form").serializeArray();
+
+  console.log( data );
+  // [{"name":"question_text","value":"tr"},{"name":"option1","value":"qewr"},{"name":"option2","value":"4wer"},{"name":"tags","value":"weq"}]
+  //data[0],		data[1],		data[2],		data[3]
+  /*{"Question":"tr",
+  		"OptionVote":{
+  				"qewr" : "0",
+  				"4wer" : "0",
+  					},
+  		"Tags" : ["weq"]
+  	}*/
+var op={}
+op["Question"]=data[0]["value"]
+var optionPart={}
+ for(i=1;i<data.length-1;i++){
+optionPart [data[i]["value"]] = "0"
+}
+op["OptionVote"]=optionPart
+
+op["Tags"]=data[data.length-1]["value"].split(',')
+//console.log(op)
+
+
+    e.preventDefault();
+
+        //$("#submit").on('click', function(e){
+        //e.preventDefault();
+            $.ajax({
+                url: 'http://127.0.0.1:8000/polls/test',
+                type : 'POST',
+                dataType : 'json',
+                data : JSON.stringify(op),
+                contentType: 'application/json; charset=UTF-8',
+                success : function(e) {
+                    alert("Data has been Stored");
+                },
+                error: function(data){
+                    alert("fail");
+                }
+
+            });
+        //});
+    });
+});
+
+
+
+    </script>
+</div>
+</body>
+</html>

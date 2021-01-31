@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vote on this pole</title>
+	<style>
+	h1{
+		text-align: center;
+		border: solid black;
+ 	 	line-height: 4;
+  		background: wheat;
+  		margin-top: 0px;
+  		width: 1063px;
+  		height: 150px;
+	}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/vote_on_this_poll.html */
+
+body > p:nth-child(3) {
+  font-size: 40px;
+  font-style: ;
+  font-family: inherit;
+  font-weight: 700;
+  font-style: normal;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  margin-left: 48px;
+}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/vote_on_this_poll.html */
+
+#option1 {
+  margin-left: 55px;
+  margin-top: 0px;
+  margin-bottom: 2px;
+  padding-top: 590px;
+  padding-bottom: 0px;
+}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/vote_on_this_poll.html */
+
+body > p:nth-child(3) {
+  margin-bottom: 22px;
+}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/vote_on_this_poll.html */
+
+#option2 {
+  margin-left: 55px;
+}
+
+/* Element | file:///C:/Users/acer/Desktop/Work_Space/study/Flyweight/Flyweight%20poll/vote_on_this_poll.html */
+
+body > button:nth-child(12) {
+  margin-left: 52px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin-top: 2px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+#CheckboxesDiv {
+ padding-bottom: 7px;
+}
+
+
+	</style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+     
+</head>
+<body>
+	<H1> FlyWeight Polls </H1>
+	<hr>
+	
+	<p id="question"></p>
+
+<!--  <input type="checkbox" id="option1" name="option1" value="yes">
+  <label for="option1"> Yes </label><br><br>
+  <input type="checkbox" id="option2" name="option2" value="no">
+  <label for="option2"> No </label><br><br> -->
+<div id="CheckBoxes">
+
+            </div>
+
+  <button id="vote">Vote</button>
+
+<script>
+  $(document).ready(function(){
+    var selc_vote = [];
+$.ajax({
+        type:'GET',
+        url: 'http://127.0.0.1:8000/polls/get/pollDetail/',
+        success:function(polls){
+
+
+            $.grep(polls, function( n, i ) {
+          //filter by question
+      //console.log(n.Question);
+      $("#question").html(n.Question)
+      for (var x in n.OptionVote){
+        var Checkbox = $(document.createElement('div'))
+        .attr("id", 'CheckboxDiv');
+        //console.log(x)
+        Checkbox.after().html(
+            '<input type="radio" id="checkbox" name="option" value="'+x+'">'+'<label>'+ x +'</label>');
+        Checkbox.appendTo("#CheckBoxes")
+
+      }
+
+    $("#vote").click(function(){
+        
+        $.each($("input[name='option']:checked"), function() {
+          selc_vote = [];
+            selc_vote.push($(this).val());
+            //console.log(selc_vote)
+
+        });
+        $.ajax({
+    type: 'PUT',
+    url: 'http://127.0.0.1:8000/polls/pollvotes/',
+    data: JSON.stringify(selc_vote),
+
+    success:function(e){
+
+      alert("Votes Updated");
+
+    }
+  });
+
+
+      });
+     });
+
+        }            
+
+}); //ajaxend
+//console.log(selc_vote)
+  
+
+        });
+      
+
+
+  
+</script>
+
+</body>
+</html>
